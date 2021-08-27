@@ -1,0 +1,45 @@
+<body>
+    <a routerLink="/PlayMatch">Back</a>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="firstPlay">
+          <th mat-header-cell *matHeaderCellDef>Team One </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstPlay}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="secondPlay">
+          <th mat-header-cell *matHeaderCellDef> Team Two </th>
+          <td mat-cell *matCellDef="let element"> {{element.secondPlay}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="firstPlayGoal">
+          <th mat-header-cell *matHeaderCellDef> Scored </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstPlayGoal}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="secondPlayGoal">
+          <th mat-header-cell *matHeaderCellDef> Scored </th>
+          <td mat-cell *matCellDef="let element"> {{element.secondPlayGoal}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="firstGoalReceived">
+            <th mat-header-cell *matHeaderCellDef> Received </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstGoalReceived}} </td>
+          </ng-container>
+    
+        <ng-container matColumnDef="secondGoalReceived">
+            <th mat-header-cell *matHeaderCellDef> Received </th>
+            <td mat-cell *matCellDef="let element"> {{element.secondGoalReceived}} </td>
+          </ng-container>
+
+
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.date.day}} / {{element.date.month}} / {{element.date.year}} </td>
+          </ng-container>
+    
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</body>
+      

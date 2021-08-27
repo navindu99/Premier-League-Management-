@@ -1,0 +1,77 @@
+<body>
+    <ul>
+      <h1>PREMIER LEAGUE TABLE</h1>
+      <li><a routerLink="/TablePoints">Points</a></li>
+      <li><a routerLink="/TableGoals">Goals</a></li>
+      <li><a routerLink="/TableWins">Wins</a></li>        
+  </ul>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="footballClubName">
+          <th mat-header-cell *matHeaderCellDef>Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.footballClubName}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="footballClubLocation">
+          <th mat-header-cell *matHeaderCellDef> Location </th>
+          <td mat-cell *matCellDef="let element"> {{element.footballClubLocation}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="footballClubStartYear">
+          <th mat-header-cell *matHeaderCellDef> Year </th>
+          <td mat-cell *matCellDef="let element"> {{element.footballClubStartYear}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="numberOfWins">
+          <th mat-header-cell *matHeaderCellDef> Wins </th>
+          <td mat-cell *matCellDef="let element"> {{element.numberOfWins}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="numberOfDraws">
+            <th mat-header-cell *matHeaderCellDef> Draws </th>
+            <td mat-cell *matCellDef="let element"> {{element.numberOfDraws}} </td>
+          </ng-container>
+    
+          <!-- Symbol Column -->
+        <ng-container matColumnDef="numberOfDefeats">
+            <th mat-header-cell *matHeaderCellDef> Defeats </th>
+            <td mat-cell *matCellDef="let element"> {{element.numberOfDefeats}} </td>
+          </ng-container>
+    
+          <!-- Symbol Column -->
+        <ng-container matColumnDef="numberOfGoalsReceived">
+          <th mat-header-cell *matHeaderCellDef><span style="font-size: 15px;"> Goal<br> Received </span> </th>
+          <td mat-cell *matCellDef="let element">{{element.numberOfGoalsReceived}} </td>
+          </ng-container>
+    
+          <!-- Symbol Column -->
+        <ng-container matColumnDef="numberOfGoalsScored">
+            <th mat-header-cell *matHeaderCellDef  style="color:rgb(0, 217, 255);"> Goal <br>Scored </th>
+            <td mat-cell *matCellDef="let element"> {{element.numberOfGoalsScored}} </td>
+          </ng-container>
+    
+          <!-- Symbol Column -->
+        <ng-container matColumnDef="numberOfPoints">
+            <th mat-header-cell *matHeaderCellDef> Points </th>
+            <td mat-cell *matCellDef="let element"> {{element.numberOfPoints}} </td>
+          </ng-container>
+    
+    
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="numberOfMatchesPlayed">
+            <th mat-header-cell *matHeaderCellDef> Played </th>
+            <td mat-cell *matCellDef="let element"> {{element.numberOfMatchesPlayed}} </td>
+          </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </body>
+      
